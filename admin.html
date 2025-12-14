@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Future Bank | Admin</title>
+<style>
+body{font-family:Segoe UI;background:#eef2ff;margin:0}
+header{background:#020617;color:white;padding:15px}
+.card{background:white;margin:20px;padding:20px;
+border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,0.15)}
+button{padding:10px;border:none;background:#020617;color:white;
+border-radius:8px;cursor:pointer}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Admin Dashboard</h2>
+</header>
+
+<div class="card">
+<h3>System Overview</h3>
+<p>Total Users: 120</p>
+<p>Total Transactions: 980</p>
+<p>Active Loans: 45</p>
+</div>
+
+<div class="card">
+<h3>Admin Controls</h3>
+<button onclick="alert('User management demo')">Manage Users</button>
+<button onclick="alert('Fraud detection demo')">Fraud Detection</button>
+<button onclick="logout()">Logout</button>
+</div>
+
+<script>
+function logout(){location.href="index.html"}
+</script>
+
+</body>
+</html>
