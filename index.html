@@ -136,8 +136,7 @@ footer{
 
   <button onclick="login()">Login</button>
 
-  <p style="font-size:12px;color:gray">
-  </p>
+  <p style="font-size:12px;color:gray"></p>
 </div>
 
 <footer>
@@ -153,6 +152,7 @@ footer{
 function toggleTheme(){
   document.body.classList.toggle("dark");
 }
+
 function showPopup(type){
   let text="";
   if(type==="about")
@@ -160,24 +160,37 @@ function showPopup(type){
   if(type==="help")
     text="<h3>Help</h3><p>Login using demo credentials. Explore future banking experience.</p>";
   if(type==="contact")
-    text="<h3>Contact</h3><p>Email: support@futurebank.com<br>Phone: ‪+91 90000 00000‬</p>";
+    text="<h3>Contact</h3><p>Email: support@futurebank.com<br>Phone: ‪‪+91 90000 00000‬‬</p>";
+
   document.getElementById("popupContent").innerHTML =
     text + "<br><button onclick='closePopup()'>Close</button>";
   document.getElementById("popup").style.display="flex";
 }
+
 function closePopup(){
   document.getElementById("popup").style.display="none";
 }
+
 function login(){
-  let r=role.value,u=username.value,p=password.value;
-  if(r==="user" && u==="user" && p==="user123")
-    alert("Welcome User!");
-  else if(r==="admin" && u==="admin" && p==="admin123")
-    alert("Welcome Admin!");
-  else
+  let r = role.value;
+  let u = username.value;
+  let p = password.value;
+
+  if(r === "user" && u === "user" && p === "user123"){
+    // Redirect to user dashboard
+    window.location.href = "user/dashboard.html";
+  }
+  else if(r === "admin" && u === "admin" && p === "admin123"){
+    // Redirect to admin dashboard
+    window.location.href = "admin/dashboard.html";
+  }
+  else{
     alert("Invalid credentials");
+  }
 }
-window.onload=()=>setTimeout(()=>showPopup("about"),800);
+
+// Auto-show about popup on page load
+window.onload = () => setTimeout(()=>showPopup("about"), 800);
 </script>
 
 </body>
