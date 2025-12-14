@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Future Bank | User</title>
+<style>
+body{font-family:Segoe UI;background:#f4f7fb;margin:0}
+header{background:#1f3c88;color:#fff;padding:15px}
+.card{background:#fff;margin:20px;padding:20px;border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15)}
+button{padding:10px;border:none;background:#1f3c88;color:white;
+border-radius:8px;cursor:pointer}
+.chatbot{
+ position:fixed;bottom:20px;right:20px;
+ background:#1f3c88;color:white;
+ padding:15px;border-radius:50%;
+ cursor:pointer;font-size:20px
+}
+.popup{position:fixed;inset:0;background:rgba(0,0,0,0.6);
+display:none;align-items:center;justify-content:center}
+.box{background:#fff;padding:20px;border-radius:10px;width:300px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Welcome to Future Bank</h2>
+</header>
+
+<div class="card">
+<h3>Account Overview</h3>
+<p><b>Balance:</b> ₹50,000</p>
+<p><b>Account Type:</b> Savings</p>
+</div>
+
+<div class="card">
+<h3>Quick Actions</h3>
+<button onclick="alert('Money transferred (Demo)')">Transfer Money</button>
+<button onclick="alert('Loan feature coming soon')">Apply Loan</button>
+<button onclick="logout()">Logout</button>
+</div>
+
+<div class="chatbot" onclick="openChat()">💬</div>
+
+<div class="popup" id="chat">
+<div class="box">
+<h3>AI Bank Assistant</h3>
+<p>Hi 👋 How can I help you?</p>
+<button onclick="reply('Your balance is ₹50,000')">Check Balance</button>
+<button onclick="reply('Loan feature coming soon')">Loan Info</button>
+<button onclick="closeChat()">Close</button>
+<p id="reply"></p>
+</div>
+</div>
+
+<script>
+function openChat(){chat.style.display="flex"}
+function closeChat(){chat.style.display="none"}
+function reply(msg){document.getElementById("reply").innerText=msg}
+function logout(){location.href="index.html"}
+</script>
+
+</body>
+</html>
